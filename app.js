@@ -16,6 +16,37 @@ form.addEventListener('submit', e=>{
     });
     //show result
     //remove the hidden class
+    //use windows object scrollTo() with x,y coordinates to take to the top
+    scrollTo(0,0);
     result.classList.remove('d-none');
-    result.querySelector('span').textContent = `${userScore}%`;
+    
+
+    let output=0;
+    const stopTimer = setInterval(() => {
+        result.querySelector('span').textContent = `${output}%`;
+        if(output === userScore){
+            clearInterval(stopTimer);
+        }else{
+            output++;
+        }
+    }, 10);
+
 });
+
+
+
+//interval and animating the numbers
+//keep in mind to stop this function as it keeps going .....
+
+
+// let i=0;
+// const stopTimer = setInterval(() => {
+//     console.log('hello');
+
+//     i++;
+//     if(i===5){
+//         clearInterval(stopTimer);
+//         console.log('stopped!!! :)');
+//     }
+
+// }, 100);
