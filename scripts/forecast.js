@@ -1,27 +1,39 @@
-const key = '	xvpOBAAypFh84YftzPvUCh8ZM80gbYIG';
+const key = 'JG9ZA8suscsVzt5o0bxwaZCXMyZqIT65';
 
-// get weather information
-const getWeather = async (id) => {
-  
-  const base = 'http://dataservice.accuweather.com/currentconditions/v1/';
-  const query = `${id}?apikey=${key}`;
+//another key for weather forecast
+// const key = 'WjQ06wp8hJ14R038YnSEA8Y2AAt2t7Ql';
 
-  const response = await fetch(base + query);
-  const data = await response.json();
+//get weather condition
+const getWeather = async (id) =>{
 
-  return data[0];
+    const base = 'http://dataservice.accuweather.com/currentconditions/v1/';
+    const query = `${id}?apikey=${key}`;
+    
+    const response = await fetch(base + query);
+    const data = await response.json();
+
+    return data[0];
+};
+
+
+//get City
+const getCity = async (city) =>{
+
+    //end point api 
+    const base = 'http://dataservice.accuweather.com/locations/v1/cities/search';
+    const query = `?apikey=${key}&q=${city}`;
+
+    const response = await fetch(base + query);
+    const data = await response.json();
+
+    return data[0];
 
 };
 
-// get city information
-const getCity = async (city) => {
+// getCity('Khobar')
+//     .then( data => {
+//         return getWeather(data.Key);
+//     }).then( data=>{
+//         console.log(data);
+//     }).catch(err => console.log(err));
 
-  const base = 'http://dataservice.accuweather.com/locations/v1/cities/search';
-  const query = `?apikey=${key}&q=${city}`;
-
-  const response = await fetch(base + query);
-  const data = await response.json();
-
-  return data[0];
-
-};
