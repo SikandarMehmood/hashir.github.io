@@ -1,0 +1,187 @@
+body{
+    font: 15px/1.5 Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0,0,0,0.1);
+}
+
+/*global  */
+.container{
+    width: 88%; /* use percentage to make responsive*/
+    margin: auto;
+    overflow: hidden;
+}
+ul{ /*all UL wil have this property setting */
+    margin: 0;
+    padding-top: 0;
+}
+.button_1{
+    height: 25px;
+    background-color: rgba(238, 113, 29, 0.931);
+    color: #ffffff;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 0;
+}
+.dark{
+    padding: 15px;
+    background: rgba(44, 43, 43, 0.2);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/*  header   */
+header{
+    background: darkcyan;
+    color: #ffffff; /*color for text*/
+    padding-top: 30px;
+    min-height: 70px; /*responsive for smaller screen*/
+    border-bottom: lightseagreen 3px solid;
+}
+
+/* links are in header so use header and a tag */
+header a{
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppsercase;
+    font-size: 16px;
+}
+
+header li{ /* this makes the li tags horizantal*/
+    /* float: left; */
+    display: inline;
+    padding: 0 20px 0 20px;
+    display: run-in;
+}
+
+/*header float setting*/
+header #branding{
+    float: left;
+}
+header #branding h1{
+    margin: 0;
+}
+header nav{
+    float: right;
+    margin-top: 10px;
+}
+header .highlight, header .current a{
+    color: rgb(238, 17, 17);
+    font-weight: bold;
+}
+header a:hover{
+    color: #cccccc;
+    font-weight: bold;
+}
+
+/*    **    **   showcase   **    **      */
+#showcase{
+    min-height: 400px;
+    background-color: rgb(46, 208, 223);
+    /* background-image: url('../img/showcase/showcase4.jpg'); */
+    background:url('../img/showcase/showcase4.jpg') no-repeat;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* * * * * * * * newsletter * * * * * */
+#newsletter{
+    padding: 10px;
+    color: rgb(67, 25, 218);
+    background: rgb(75, 172, 201);
+}
+#newsletter h1{
+    float: left;
+}
+#newsletter form{
+    float: right;
+    margin-top: 15px;
+}
+#newsletter input[type="email"]{
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+
+/*    * * * * * boxes * * * * * *   */
+#boxes{
+    margin-top: 20px;
+}
+#boxes .box{
+    float: left;
+    text-align: center;
+    width: 30%; /* % because it is responsive */
+    padding: 15px;
+}
+/* decrease image size */
+#boxes .box img{
+    width: 80px;
+}
+
+/*  * * * sidebar * * *  */
+article#main-col{
+    float: left;
+    width: 50%;
+    margin-top: 20px;
+}
+aside#sidebar{
+    float: right;
+    width: 40%;
+    margin-top: 10px;
+}
+aside#sidebar .quote input, aside#sidebar .quote textarea{
+    width: 90%;
+    padding: 5px;
+}
+
+/*   * * * * Services * * * * * */
+ul#services li{
+    list-style: none;
+    padding: 20px;
+    border: #cccccc solid 1px;
+    margin-bottom: 5px;
+    background: #bfbff1;
+}
+
+/*   **    **   footer    **     **    */
+footer{
+    padding: 8px;
+    margin-top: 20px;
+    color: #ffffff;
+    background-color: lightslategray;
+    text-align: center;
+}
+
+/* media query */
+@media(max-width: 768px){
+    /* body{
+        display: none;
+    } */
+    header #branding,
+    header nav li,
+    #newsletter form,
+    #boxes .box,
+    article#main-col,
+    aside#sidebar{
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    header{
+        padding-bottom: 20px;
+    }
+
+    #showcase h1{
+        margin-top: 40px;
+    }
+    #newsletter button, .quote button{
+        display: block;
+        width: 100%;
+    }
+    #newsletter form input[type="email"], .quote input, .quote textarea{
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
